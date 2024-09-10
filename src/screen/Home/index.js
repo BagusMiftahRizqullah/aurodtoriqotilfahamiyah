@@ -6,7 +6,9 @@ import { CardMenu,
   HizbullNafsh,
   Yasin,
   RatibulMuhammad,
+  Waqiah,
 } from '../../components';
+import { ReactNativeZoomableView } from '@openspacelabs/react-native-zoomable-view';
 
 const Home = () => {
   const scrollViewRef = useRef(null);
@@ -18,18 +20,18 @@ const Home = () => {
     }
 
     if(y == 2){
-      scrollViewRef.current.scrollTo({ y: 6200, animated: true });
+      scrollViewRef.current.scrollTo({ y: 6600, animated: true });
 
     }
 
 
     if(y == 3){
-      scrollViewRef.current.scrollTo({ y: 9400, animated: true });
+      scrollViewRef.current.scrollTo({ y: 10100, animated: true });
 
     }
 
     if(y == 4){
-      scrollViewRef.current.scrollTo({ y: 21700, animated: true });
+      scrollViewRef.current.scrollTo({ y: 21800, animated: true });
 
     }
   };
@@ -73,6 +75,8 @@ const Home = () => {
       <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
         <ScrollView ref={scrollViewRef}>
           <View style={{ flex:1, padding: 8}}>
+
+
             {/* card Menu */}
            <CardMenu scrollToView={scrollToView} />
            {/* Istigfar Shalawat */}
@@ -81,9 +85,11 @@ const Home = () => {
             <HizbullNafsh />
               {/* Yasin */}
               <Yasin />
-
             {/* RatibulMuhammad */}
             <RatibulMuhammad />
+            {/* Waqiah */}
+            <Waqiah />
+
           </View>
         </ScrollView>
       </SafeAreaView>

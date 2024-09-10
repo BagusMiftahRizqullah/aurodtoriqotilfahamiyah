@@ -26,23 +26,26 @@ const HizbullNafsh = () => {
 
         <Text style={styles.arab}>٦</Text>
 
-        <Text style={styles.arab}>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</Text>
+        <Text style={styles.arab}>بِسْــمِ اللهِ الرَّحْمٰــنِ الرَّحِيْـــمِ</Text>
         <Text style={styles.latin}>BISMILLAHIR-ROHMANNIR-ROHIIM</Text>
 
-        <Text style={styles.arab}>حِزْبُ النَّفْس</Text>
+        <Text style={styles.arab}>حِزْبُ النّفس</Text>
         <Text style={styles.latin}>HIZBUN-NAFS</Text>
 
-        <Text style={styles.arab}>تواصل</Text>
-        <Text style={styles.arab}>خُصُوصًا إِلَى كَنْجُنْ نَبِيِّ مُحَمَّدٍ صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ ... اَلْفَاتِحَةُ</Text>
-        <Text style={styles.latin}>KHUSUUSON ILAA KANJEUNG NABI MUHAMMAD SHOLLALLOHU ALAIHI WA SALLAM … ALFAATIHAH</Text>
-        <Text style={styles.latin}>BACA ALFAATIHAH 1X</Text>
+        <Text style={styles.arab}>توالصّول</Text>
+        <Text style={styles.arab}>خُصُوْصًا إِلٰى كَنْجٓڠْ نَبِى مُحَمَّدْ صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ</Text>
+        <Text style={styles.latin}>KHUSUUSON ILAA KANJEUNG NABI MUHAMMAD SHOLLALLOHU  'ALAIHI WA SALLAM</Text>
+        <Text style={styles.arab}>….. اَلفَاتِحَةْ..</Text>
+        <Text style={styles.latin}>ALFAATIHAH…. BACA ALFAATIHAH 1X</Text>
         <Text style={styles.arab}>
-        خُصُوصًا إِلَى نَبِيِّ اللَّهِ خِضْرٍ عَلَيْهِ السَّلَامُ
+        خُصُوْصًا إِلٰى نَبِيُّ اللّٰهْ حِضِيْرْ عَلَيْهِ الَّسلَام
+        </Text>
+        <Text style={styles.latin}>
+            KHUSUUSON ILAA NABIYYULLOH HIDHIR ALAIHIS-SALAM
         </Text>
         <Text style={styles.arab}>
-        ... الْفَاتِحَةُ
+            ….. اَلفَاتِحَةْ..
         </Text>
-        <Text style={styles.latin}>KHUSUUSON ILAA NABIYYULLOH HIDHIR ALAIHIS-SALAM … ALFAATIHAH</Text>
         <Text style={styles.latin}>BACA ALFAATIHAH 1X</Text>
         </View>
 
@@ -53,25 +56,29 @@ const HizbullNafsh = () => {
 
             <Text style={styles.arab}>٧</Text>
             <Text style={styles.arab}>
-                خُصُوصًا إِلَى الْمَلَائِكَةِ الْمُقَرَّبُونَ
+            خُصُوْصًا إِلٰى اْلمَلآئِكَةُ  اْلمُقَرَّبُيْنْ
+            </Text>
+            <Text style={styles.latin}>
+                KHUSUUSHON ILAAL  MALAA"IKATUL - MUQORROBUUN
             </Text>
             <Text style={styles.arab}>
-            ... الْفَاتِحَةُ
+            ….. اَلفَاتِحَةْ..
+            </Text>
+            <Text style={styles.latin}>
+                ALFAATIHAH…  BACA ALFAATIHAH 1X
             </Text>
 
-            <Text style={styles.latin}>KHUSUUSHON ILAAL MALAA"IKATUL - MUQORROBUUN … ALFAATIHAH...  BACA ALFAATIHAH 1X </Text>
-
-            <Text style={styles.arab}>
-            خُصُوصًا إِلَى الشَّيْخِ الْمُرْشِدِ فَهْمِي الْمُحَمَّدِ
-            </Text>
-            <Text style={styles.latin}>KHUSUUSHON ILAA SYAIKH AL-MURSYD FAHMI AL-MUHAMMAD</Text>
 
             <Text style={styles.arab}>
-            خَيْرُكُ اللهِ... الْفَاتِحَةُ
+            خُصُوْصًا إِلٰى شَيْخْ اَلْمُرْشِدْ فَهْمِيْ اَلْمُحَمَّدْ خَيْرُقُ اللّٰهِ
             </Text>
-            <Text style={styles.latin}>KHOIRUQULLOH… ALFAATIHAH</Text>
-            <Text style={styles.latin}>BACA ALFAATIHAH 1X</Text>
-            <Text style={styles.latin}>۞۞۞۞</Text>
+            <Text style={styles.latin}>KHUSUUSHON ILAA SYAIKH AL-MURSYD FAHMI AL-MUHAMMAD  KHOIRUQULLOH</Text>
+
+            <Text style={styles.arab}>
+            ….. اَلفَاتِحَةْ..
+            </Text>
+            <Text style={styles.latin}>… ALFAATIHAH  BACA ALFAATIHAH 1X</Text>
+            <Text style={styles.arab}>۞۞۞۞</Text>
         </View>
 
         <View style={{
@@ -80,21 +87,21 @@ const HizbullNafsh = () => {
         }}>
 
             <Text style={styles.arab}>٨</Text>
-            <Text style={styles.arab}>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ       ٣ كالٰ (تنفا نفاس) </Text>
+            <Text style={styles.arab}>بِسْمِ اللّٰه الرَّحْمٰنِ الرَّحيْم        ٣ كالى  (تنفا نفاس )</Text>
             <Text style={styles.latin}>BISMILLAHIR-ROHMANNIR-ROHIIM</Text>
             <Text style={styles.latin}>DI BACA 3 KALI TANFA NAFAS / 1 KALI NAFAS</Text>
-            <Text style={styles.arab}>اللّهُمّ صَلِّ عَلَى مُحَمَّد وَعَلَى آلِ سَيِّدِنَا مُحَمَّد</Text>
+            <Text style={styles.arab}>اللّٰهُمَّ صَلِّى عَلٰى مُحَمَّدْ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدْ</Text>
             <Text style={styles.latin}>ALLOHUMMA SHOLI 'ALA MUHAMMAD WA 'ALA AALI SAYYIDINA MUHAMMAD</Text>
-            <Text style={styles.arab}>بِعَدَدِ كُلِّ مَعْلُومٍ لَكَ ٣ كالٰ</Text>
+            <Text style={styles.arab}>بِعَدَدِ كُلِّ مَعْلُوْمٍ لَكَ  ٣ كالى</Text>
             <Text style={styles.latin}>BI 'ADADI KULLI MA'LUUMI LAK</Text>
             <Text style={styles.latin}>DI BACA 3 KALI</Text>
             <Text style={[styles.arab, {
-                fontSize: 21,
-            }]}>(دىأ نجور ْ كان فواسا٥حارىسآومُرحدوفسكالٰ )</Text>
+                fontSize: 20,
+            }]}>( دى أنجورْكان فواسا ٥ حار ىسأومُرْ حدوف سكالى)</Text>
             <Text style={styles.latin}>DI ANJURKAN PUASA 5 HARI , SEKALI SAJA SEUMUR HIDUP</Text>
 
-            <Text style={styles.latin}>۞۞۞</Text>
-            <Text style={styles.latin}>۞</Text>
+            <Text style={styles.arab}>۞۞۞</Text>
+            <Text style={styles.arab}>۞</Text>
         </View>
 
     </View>
@@ -115,7 +122,7 @@ const styles = StyleSheet.create({
 
     latin:{
         color: '#000000',
-        fontSize: heightPercentageToDP('2%'),
+        fontSize: heightPercentageToDP('1.7%'),
         fontWeight: 'bold',
         marginBottom: heightPercentageToDP('4%'),
         alignSelf: 'center',

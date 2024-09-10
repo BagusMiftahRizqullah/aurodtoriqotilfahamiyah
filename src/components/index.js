@@ -3,7 +3,7 @@ import HizbullNafsh from './HizbullNafsh';
 import IstighfarShalawat from './IstighfarShalawat';
 import Yasin from './Yasin';
 import RatibulMuhammad from './RatibulMuhammad';
-
+import Waqiah from './Waqiah';
 
 export {
     CardMenu,
@@ -11,4 +11,5 @@ export {
     HizbullNafsh,
     Yasin,
     RatibulMuhammad,
+    Waqiah,
 };

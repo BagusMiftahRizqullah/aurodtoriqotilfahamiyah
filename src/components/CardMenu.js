@@ -7,14 +7,14 @@ const CardMenu = ({scrollToView}) => {
     const dataMenu = [
         {
             id: 1,
-            title: 'قُرِأَ بَعْد َ الص َّ لَ َ ةِ الْفَر ْ ض ',
+            title: ' قُرِأَ بَعْدَ الصَّلَاةِ الْفَرْضِ',
             image: require('../Assets/images/Putih.png'),
             descriptionID: "SETIAP BA'DA SHOLAT FARDHU",
             descriptionEN: 'READ AFTER SHOLAT FARDHU',
         },
         {
             id: 2,
-            title: 'قُرِأَ بَعْد َ الص َّ لَ َ ةِ الص ُّ بْحِ',
+            title: ' قُرِأَ بَعْدَ الصَّلَاةِ الصُّبْحِ',
             image: require('../Assets/images/HisbulNafsh.png'),
             descriptionID: "SETIAP BA'DA SHOLAT SUBUH",
             descriptionEN: 'READ AFTER SHOLAT SUBUH',
@@ -22,7 +22,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 3,
-            title: 'قُرِأَ بَعْد َ الص َّ لَ َ ةِ الص ُّ بْحِ والْمَغْرِب',
+            title: ' قُرِأَ بَعْدَ الصَّلَاةِ الصُّبْحِ والْمَغْرِبْ',
             image: require('../Assets/images/Yasin.png'),
             descriptionID: "SETIAP BA'DA SHOLAT SUBUH DAN SHOLAT MAGHRIB",
             descriptionEN: 'READ AFTER SHOLAT SUBUH AND SHOLAT MAGHRIB',
@@ -30,7 +30,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 4,
-            title: 'قُرِأَ بَعْد َ الص َّ لَ َ ةِ العَصْ',
+            title: ' قُرِأَ بَعْدَ الصَّلَاةِ العَصْرِ',
             image: require('../Assets/images/ratibulMuhammad.png'),
             descriptionID: "SETIAP BA'DA SHOLAT ASHAR",
             descriptionEN: 'READ AFTER SHOLAT ASHAR',
@@ -38,7 +38,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 5,
-            title: 'قُرِأَ بَعْد َ الص َّ لَ َ ةِ العَصْ ْ',
+            title: ' قُرِأَ بَعْدَ الصَّلَاةِ العَصْرِ',
             image: require('../Assets/images/Alwaqiah.png'),
             descriptionID: "SETIAP BA'DA SHOLAT ASHAR",
             descriptionEN: 'READ AFTER SHOLAT ASHAR',
@@ -46,7 +46,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 6,
-            title: 'قُرِأَ قَبْلَ الص َّ لَ َ ةِ الْمَغْرِب',
+            title: ' قُرِأَ  قَبْلَ الصَّلَاةِ الْمَغْرِبْ',
             image: require('../Assets/images/Hijau.png'),
             descriptionID: 'SEBELUM SHOLAT MAGHRIB',
             descriptionEN: 'READ BEFORE SHOLAT MAGHRIB TIME',
@@ -54,7 +54,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 7,
-            title: 'قُرِأَ بَعْد َ الص َّ لَ َ ةِ الْمَغْرِب',
+            title: ' قُرِأَ بَعْدَ الصَّلَاةِ الْمَغْرِبْ',
             image: require('../Assets/images/maulidulMuhammad.png'),
             descriptionID: "SETIAP BA'DA SHOLAT MAGHRIB",
             descriptionEN: 'READ AFTER SHOLAT MAGHRIB',
@@ -62,7 +62,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 8,
-            title: 'قُرِأَ بَعْد َ الص َّ لَ َ ةِ الْعِش َ اء',
+            title: ' قُرِأَ بَعْدَ الصَّلَاةِ الْعِشَاءْ',
             image: require('../Assets/images/manaqib.png'),
             descriptionID: "SETIAP BA'DA SHOLAT 'ISYA",
             descriptionEN: "READ AFTER SHOLAT 'ISYA",
@@ -70,7 +70,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 9,
-            title:'قُرِأَ بَعْد َ الص َّ لَ َ ةِ الْعِش َ اءْ',
+            title:' قُرِأَ بَعْدَ الصَّلَاةِ الْعِشَاءْ',
             image: require('../Assets/images/AlMulk.png'),
             descriptionID: "SETIAP BA'DA SHOLAT 'ISYA",
             descriptionEN: "READ AFTER SHOLAT 'ISYA",
@@ -78,7 +78,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 10,
-            title:'قُرِأَ كُ ُ َّ و َقْت ٍ تحِبّك ',
+            title:' قُرِأَ  كُلَّ وَقْتٍ تحِبّكْ',
             image: require('../Assets/images/DoaFathimah.png'),
             descriptionID: 'KAPAN SAJA',
             descriptionEN: 'READ WHENEVER',
@@ -86,7 +86,7 @@ const CardMenu = ({scrollToView}) => {
 
         {
             id: 11,
-            title:'قُرِأَ كُ ُ َّ و َقْت ٍ تحِبّك ',
+            title:' قُرِأَ  كُلَّ وَقْتٍ تحِبّكْ',
             image: require('../Assets/images/DoaMuzamil.png'),
             descriptionID: 'KAPAN SAJA',
             descriptionEN: 'READ WHENEVER',
@@ -120,12 +120,12 @@ const CardMenu = ({scrollToView}) => {
                              marginBottom: heightPercentageToDP('1%'),
                            }}>{item.title}</Text>
                            <Text style={{
-                             fontSize: heightPercentageToDP('2%'),
+                             fontSize: heightPercentageToDP('1.7%'),
                              fontWeight: 'bold',
                              color: '#000000',
                            }}>DIBACA <Text style={{color: '#008080'}} >{item.descriptionID}</Text></Text>
                            <Text style={{
-                             fontSize: heightPercentageToDP('2%'),
+                             fontSize: heightPercentageToDP('1.7%'),
                              fontWeight: 'bold',
                              color: '#000000',
                            }}>{item.descriptionEN}</Text>
