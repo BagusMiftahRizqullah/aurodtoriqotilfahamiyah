@@ -7,6 +7,8 @@ import { CardMenu,
   Yasin,
   RatibulMuhammad,
   Waqiah,
+  WiridulSyifa,
+  MaulidulMuhammad,
 } from '../../components';
 import { ReactNativeZoomableView } from '@openspacelabs/react-native-zoomable-view';
 
@@ -89,6 +91,11 @@ const Home = () => {
             <RatibulMuhammad />
             {/* Waqiah */}
             <Waqiah />
+            {/* WiridulSyifa */}
+            <WiridulSyifa/>
+
+            {/* maulidulMuhammad */}
+            <MaulidulMuhammad/>
 
           </View>
         </ScrollView>
