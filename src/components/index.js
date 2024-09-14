@@ -6,6 +6,7 @@ import RatibulMuhammad from './RatibulMuhammad';
 import Waqiah from './Waqiah';
 import WiridulSyifa from './WiridulSyifa';
 import MaulidulMuhammad from './MaulidulMuhammad';
+import Manaqib from './Manaqib';
 
 export {
     CardMenu,
@@ -16,4 +17,5 @@ export {
     Waqiah,
     WiridulSyifa,
     MaulidulMuhammad,
+    Manaqib,
 };

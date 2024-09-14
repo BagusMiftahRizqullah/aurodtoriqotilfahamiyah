@@ -9,6 +9,7 @@ import { CardMenu,
   Waqiah,
   WiridulSyifa,
   MaulidulMuhammad,
+  Manaqib,
 } from '../../components';
 import { ReactNativeZoomableView } from '@openspacelabs/react-native-zoomable-view';
 
@@ -97,6 +98,8 @@ const Home = () => {
             {/* maulidulMuhammad */}
             <MaulidulMuhammad/>
 
+            {/* Manaqib */}
+            <Manaqib/>
           </View>
         </ScrollView>
       </SafeAreaView>
