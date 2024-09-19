@@ -1599,6 +1599,533 @@ const Manaqib = () => {
             BISMILLAHIR-ROHMANIR-ROHIIM
             </Text>
         </View>
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١٠٢</Text>
+
+            <Text style={styles.arab}>
+            الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِينَ ۞ الرَّحْمٰنِ الرَّحِيمِ ۞
+            </Text>
+            <Text style={styles.latin}>
+            ALHAMDULILLAAHIROBBIL'AALAMIIN  ۞   ARROHMAANIR-ROHIIM  ۞
+            </Text>
+
+
+            <Text style={styles.arab}>
+            ماٰلِكِ يَوْمِ الدِّينِ ۞ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ۞
+            </Text>
+            <Text style={styles.latin}>
+            MAALIKIYAUMIDDIIN  ۞IYYAAKA NA'BUDU WA IYYA   KANASTA'IIN   ۞
+            </Text>
+
+            <Text style={styles.arab}>
+            اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۞صِرَاطَ الَّذِينَ اَنْعَمْتَ
+            </Text>
+            <Text style={styles.latin}>
+            IHDINAS-SHIROOTOL MUSTAQIIM   ۞  SHIROOTOL-LADZIINA AN 'AMTA
+            </Text>
+
+
+            <Text style={styles.arab}>
+            عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلاَالضَّآلِّينَ ۞
+            </Text>
+            <Text style={styles.latin}>
+            ALAIHIM, GHOIRIL MAGHDHUUBI  'ALAIHIM   WA LAZDHOLLIIIN  ۞
+            </Text>
+
+            <Text style={styles.arab}>
+            اٰمِيْنَ
+            </Text>
+            <Text style={styles.latin}>
+            AAMIIN
+            </Text>
+
+            <Text style={styles.arab}>
+            ۞۞۞
+            </Text>
+            <Text style={styles.arab}>
+            ۞
+            </Text>
+        </View>
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١٠٣</Text>
+
+            <Text style={styles.arab}>
+            وَ خُصُوْصًا إِلٰی  شَيْخٌ اَلْمُرْشِدْ فَهْمِيْ
+            </Text>
+            <Text style={styles.latin}>
+            WA KHUSUUSON ILAA SYAIKH AL-MURSYD FAHMI
+            </Text>
+
+            <Text style={styles.arab}>
+            اَلْمُحَمَّدِ خَيْرُقُ اللّٰهِ هُوَ الْاِمَامِ الطَّرِيْقَةِ
+            </Text>
+            <Text style={styles.latin}>
+            AL-MUHAMMAD KHOIRUQULLOH HUWAL-IMAAMIT-THORIQOTIL
+            </Text>
+
+            <Text style={styles.arab}>
+            الفَهَمِيَّةِ شَيْءٌ لِلّٰهِ لَهُمُ الْفَاتِحَة
+            </Text>
+            <Text style={styles.latin}>
+            FAHAMIYYAH  SYAI"UL-LILLAHI LAHUM ALFAATIHAH
+            </Text>
+
+            <Text style={styles.arab}>
+            بِسْــــمِ اللهِ الرَّحْمٰـــنِ الرَّحِيْــــمِ
+            </Text>
+            <Text style={styles.latin}>
+            BISMILLAHIR-ROHMANIR-ROHIIM
+            </Text>
+
+            <Text style={styles.arab}>
+            الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِينَ ۞ الرَّحْمٰنِ الرَّحِيمِ ۞
+            </Text>
+            <Text style={styles.latin}>
+            ALHAMDULILLAAHIROBBIL'AALAMIIN  ۞   ARROHMAANIR-ROHIIM  ۞
+            </Text>
+
+            <Text style={styles.arab}>
+            ماٰلِكِ يَوْمِ الدِّينِ ۞ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ۞
+            </Text>
+            <Text style={styles.latin}>
+            MAALIKIYAUMIDDIIN  ۞IYYAAKA NA'BUDU WA IYYA   KANASTA'IIN   ۞
+            </Text>
+        </View>
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١٠٤</Text>
+
+            <Text style={styles.arab}>
+            اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۞ صِرَاطَ الَّذِينَ اَنْعَمْتَ
+            </Text>
+            <Text style={styles.latin}>
+            IHDINAS-SHIROOTOL MUSTAQIIM   ۞  SHIROOTOL-LADZIINA AN 'AMTA
+            </Text>
+
+            <Text style={styles.arab}>
+            عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلاَالضَّآلِّينَ ۞
+            </Text>
+            <Text style={styles.latin}>
+            ALAIHIM, GHOIRIL MAGHDHUUBI  'ALAIHIM   WA LAZDHOLLIIIN  ۞
+            </Text>
+
+
+            <Text style={styles.arab}>
+            اٰمِينْ
+            </Text>
+            <Text style={styles.latin}>
+            AAMIIN
+            </Text>
+
+            <Text style={styles.arab}>
+            ۞۞۞
+            </Text>
+
+
+            <Text style={styles.arab}>
+            اَسْتَغْفِرُ اللهَ رَبَّ الْبَرَايَا،
+            </Text>
+            <Text style={styles.latin}>
+            ASTAGFIRULLOOH ROBBAL BAROOYAA
+            </Text>
+
+            <Text style={styles.arab}>
+            اَسْتَغْفِرُ اللهَ مِنَ الْخَطٰايَا
+            </Text>
+            <Text style={styles.latin}>
+            ASTAGFIRULLOOH MINAL KHOTHOOYAA
+            </Text>
+            <Text style={styles.arab}>
+            ۞۞۞
+            </Text>
+
+
+        </View>
+
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١٠٥</Text>
+
+            <Text style={styles.arab}>
+            اللّٰهُمَّ انْصُرْنَا وَشَفَاعَةِ الرَّسُوْلِ اللّٰهِ
+            </Text>
+            <Text style={styles.latin}>
+            'ALLOHUMMMAN-SURNAA WA SYAFAA'ATIR-ROSUULILLAHI
+            </Text>
+
+            <Text style={styles.arab}>
+            صَّلَّى اللهُ عَلَيْهِ وَسَلَّمَ
+            </Text>
+            <Text style={styles.latin}>
+            'SHOLLALLOHU ALAIHI WA SALAM
+            </Text>
+
+            <Text style={styles.arab}>
+            بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+            </Text>
+            <Text style={styles.latin}>
+            BISMILLAHIR-ROHMAANIR-ROHIIM
+            </Text>
+
+            <Text style={styles.arab}>
+            اَلحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَ وَالصَّلَاةُ عَلٰى
+            </Text>
+            <Text style={styles.latin}>
+            ALHAMDULILLAHI ROBBIL'AALAMINN WAS-SHOLAATU 'ALAA
+            </Text>
+
+
+
+            <Text style={styles.arab}>
+            رَسُوْلِهِ الْكَرِيْمِ، يَاحَيُّ يَاقَيِّوْمُ يَاحَيُّ
+            </Text>
+            <Text style={styles.latin}>
+            ROSUULIHIL KARIIM, YAA HAYYU YAA QOYYUM YAA HAYYU
+            </Text>
+
+            <Text style={styles.arab}>
+            لَااِلٰهَ اِلَّا اللهُ مُحَمَّدٌ رَّسُوْلُ اللهِ ،
+            </Text>
+            <Text style={styles.latin}>
+            LAA ILAHA ILLALLOOH MUHAMMADUR-ROSUULULLOH
+            </Text>
+        </View>
+
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١٠٦</Text>
+
+            <Text style={styles.arab}>
+            وَلَاحَوْلَ وَلَاقُوَّةَ اِلَّا بِاللهِ،
+            </Text>
+            <Text style={styles.latin}>
+            WA LAA HAULA WA LAA QUWWATA ILLA BILLAH
+            </Text>
+
+
+            <Text style={styles.arab}>
+            اللّٰهُمَّ اِنِّى اَسْىَٔلُكَ بِكَرَمَةِ مَنَقِبُ الطَّريْقَةِ
+            </Text>
+            <Text style={styles.latin}>
+            ALLOHUMMA INNII AS'ALUKA BIKAROMATI MANAQIBUT-
+            </Text>
+
+            <Text style={styles.arab}>
+            اللّٰهُمَّ اِنِّى اَسْىَٔلُكَ بِكَرَمَةِ مَنَقِبُ الطَّريْقَةِ
+            </Text>
+            <Text style={styles.latin}>
+            ALLOHUMMA INNII AS'ALUKA BIKAROMATI MANAQIBUT- THORIQOTIL
+            </Text>
+
+
+            <Text style={styles.arab}>
+            الفَهَمِيَّةِ
+            </Text>
+            <Text style={styles.latin}>
+            FAHAMIYYAH
+            </Text>
+
+            <Text style={styles.arab}>
+            بِسْمِ اللهِ، بِسْمِ اللهِ، بِسْمِ اللهِ،
+            </Text>
+            <Text style={styles.latin}>
+            BISMILLAH, BISMILLAH, BISMILLAH,
+            </Text>
+
+            <Text style={styles.arab}>
+            يَا اللهُ،  يٰسٓى ٣كالى،  حٰمٓ، عٓسٓقٓ،
+            </Text>
+            <Text style={styles.latin}>
+            YAA ALLOH, YASIIIIN 3X, HAAMIIIIM, 'AINN SIIIN QOOOOF
+            </Text>
+
+            <Text style={styles.arab}>
+            بِسْمِ اللهِ الَّذِيْ لَااِلٰهَ اِلَّا هُوَ الْحَيُّ القَيّوْمُ،
+            </Text>
+            <Text style={styles.latin}>
+            BISMILLAHIL-LADZII LAA ILAAHA ILLAA HUWAL-HAYYUL-QOYYUM
+            </Text>
+        </View>
+
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١٠٧</Text>
+
+            <Text style={styles.arab}>
+            بِسْمِ اللهِ الَّذِيْ لاَيَضُرُّ مَعَ اِسْمِهِ شَيْءٌ
+            </Text>
+            <Text style={styles.latin}>
+            BISMILLAHILLADZII LAA YADHURRU MA'A ISMIHI SYAI'UN
+            </Text>
+
+            <Text style={styles.arab}>
+            فِى الْاَرْضِ وَلَا فِىْ السَّمَاءِ وَهُوَ السَّمِيْعُ
+            </Text>
+            <Text style={styles.latin}>
+            FIL-ARDHI WA LAA FIS-SAMAA"I WAHUWAS-SAMII'UL
+            </Text>
+
+            <Text style={styles.arab}>
+            الْعَليْمُ، اللّٰهُمَّ اِنَّكَ جَعَلْتَ يٰسٓ شِفَاءً لِمَنْ
+            </Text>
+            <Text style={styles.latin}>
+            'ALIIM, ALLOHUMMA INNAKA JA'ALTA  YAASIIIINN ' SYIFAA"AN LIMAN
+            </Text>
+
+            <Text style={styles.arab}>
+            قَرَأَهَا وَلِمَنْ قُرِىَٔتْ عَلَيْهِ  اَلْفَا شِفَاءٍ
+            </Text>
+            <Text style={styles.latin}>
+            QORO"AHAA WA LIMAN QURI"AT 'ALAIHI ALFAA SYIFAA"IN
+            </Text>
+
+
+            <Text style={styles.arab}>
+            وَاَلْفَ دَوَاءٍ، وَاَلْفَ بَرَكَةٍ، وَاَلْفَ رَحْمَةٍ،
+            </Text>
+            <Text style={styles.latin}>
+            WA ALFA DAWAA"IN  WA ALFA BAROKATIN, WA ALFA ROHMATIN
+            </Text>
+
+            <Text style={styles.arab}>
+            وَاَلْفَ نِعْمَةٍ، وَسَمَّيْتَهَا عَلَى لِسَانِ نَبِّيِّكَ
+            </Text>
+            <Text style={styles.latin}>
+            WA ALFA NI'MATIN, WASAMMAITAHAA 'ALAA LISAANI NABIYYIKA
+            </Text>
+        </View>
+
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١٠٨</Text>
+
+
+            <Text style={styles.arab}>
+            مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ،
+            </Text>
+            <Text style={styles.latin}>
+            MUHAMMADIN SHOLLALLOHU 'ALAIHI WA SALLAM
+            </Text>
+
+
+            <Text style={styles.arab}>
+            اِرْحَمْنَا يَا اَرْحَمَ الرَّاحِمِيْنَ،
+            </Text>
+            <Text style={styles.latin}>
+            IRHAMNAA YAA ARHAMAR-ROOHIMIIN,
+            </Text>
+
+            <Text style={styles.arab}>
+            رَبَّنَا لَاتُزِغْ قُلُوْبَنَا بَعْدَ اِذْهَدَيْتَنَا
+            </Text>
+            <Text style={styles.latin}>
+            ROBBANAA LAA TUZIGH QULUUBANAA BA'DA IZD HADAITANAA
+            </Text>
+
+
+            <Text style={styles.arab}>
+            وَهَبْلَنَا مِنْ لَدُنْكَ رَحْمَةً اِنَّكَ اَنْتَ الوَهَّابُ
+            </Text>
+            <Text style={styles.latin}>
+            WA HABLANAA MIL-LADUNKA ROHMAH INNAKA ANTAL-WAHHAB
+            </Text>
+
+
+            <Text style={styles.arab}>
+            رَبَّنَا هَبْ لَنَا مِنْ  أَزْوَاجِنَا وَذُرِّيَاتِنَا
+            </Text>
+            <Text style={styles.latin}>
+            ROBBANAA HABLANAA MIN AZWAAJINAA WA DZURRIYAATINAA
+            </Text>
+
+            <Text style={styles.arab}>
+            قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِيْنَ إِمَامًا
+            </Text>
+            <Text style={styles.latin}>
+            QURROTA "A'YUN  WAJ'ALNAA LILMUTTAQIINA IMAAMA
+            </Text>
+        </View>
+
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١٠٩</Text>
+
+            <Text style={styles.arab}>
+            رَبَّنَا لَا تُؤَاخِذْنَآ إِنْ نَّسِيْنَآ أَوْ أَخْطَأْنَا ۚ
+            </Text>
+            <Text style={styles.latin}>
+            ROBBANAA LAA TU"AKHIDZNAA IN NASIINAA AU "AKHTO"NAA
+            </Text>
+
+            <Text style={styles.arab}>
+            رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًا كَمَا حَمَلْتَهُ
+            </Text>
+            <Text style={styles.latin}>
+            ROBBANAA WA LAA TAHMIL 'ALAINAA ISHRON KAMAA HAMALTAHU
+            </Text>
+
+            <Text style={styles.arab}>
+            عَلَى ٱلَّذِيْنَ مِنْ قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا
+            </Text>
+            <Text style={styles.latin}>
+            'ALAL-LADZIINA MIN-QOBLINA, ROBBANA WA LAA TUHAMMILNAA
+            </Text>
+
+            <Text style={styles.arab}>
+            مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا
+            </Text>
+            <Text style={styles.latin}>
+            'MAA LAA THOOQOTA LANAA BIH, WA'FU 'ANNAA WAGHFIRLANAA
+            </Text>
+
+            <Text style={styles.arab}>
+            وَٱرْحَمْنَآ ۚ أَنتَ مَوْلَىٰنَا فَٱنصُرْنَا
+            </Text>
+            <Text style={styles.latin}>
+            'WARHAMNAA, ANTA MAULANAA FANSURNAA
+            </Text>
+
+            <Text style={styles.arab}>
+            عَلَى ٱلْقَوْمِ ٱلْكٰفِرِينَ
+            </Text>
+            <Text style={styles.latin}>
+            'ALAL QOUMIL KAAFIRIIN
+            </Text>
+
+        </View>
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١١٠</Text>
+
+            <Text style={styles.arab}>
+            رَبَّنَا ظَلَمْنَا أَنْفُسَنَا وَإِنْ لَمْ تَغْفِرْ لَنَا
+            </Text>
+            <Text style={styles.latin}>
+            'ROBBANAA DZHOLAMNAA ANFUSANAA WA IN-LAM TAGHFIRLANAA
+            </Text>
+
+            <Text style={styles.arab}>
+            وَتَرْحَمْنَا لَنَكُوْنَنَّ مِنَ الْخَاسِرِيْنَ
+            </Text>
+            <Text style={styles.latin}>
+            'WA TARHAMNAA LANAKUUNANNA MINAL KHOOSIRIIN
+            </Text>
+
+            <Text style={styles.arab}>
+            اللّٰهُمَّ اغْفِرْ لِيْ ذُنُوْبِيْ وَلِوَالِدَيَّ
+            </Text>
+            <Text style={styles.latin}>
+            'ALLOHUMMAGH-FIRLII DZUNUUBII WA LIWAALIDAYYA
+            </Text>
+
+            <Text style={styles.arab}>
+            وَارْحَمْهُمَا كَمَا رَبَّيَانِيْ صَغِيْراً
+            </Text>
+            <Text style={styles.latin}>
+            'WAR-HAMHUMAA KAMAA ROBBAYAANII SHOGHIIROO
+            </Text>
+
+            <Text style={styles.arab}>
+            وَلِجَمِيْعِ المُسْلِمِيْنَ وَالمُسْلِمَاتِ وَالمُؤْمِنِينَ
+            </Text>
+            <Text style={styles.latin}>
+            WA LIJAMII'IL MUSLIMIINA WAL MUSLIMAAT WAL MU"MINIINA
+            </Text>
+
+            <Text style={styles.arab}>
+            والْمُؤْمِنَاتِ الْأَحْيَاءِ مِنْهُمْ وَالْاَموَاتِ
+            </Text>
+            <Text style={styles.latin}>
+            WAL MU"MINAAT AL-AHYAA"I MINHUM WAL AMWAAT
+            </Text>
+        </View>
+
+        <View style={{
+            borderWidth:2, borderColor: '#000000', padding: 8, backgroundColor: '#FFFFFF',
+            marginBottom: heightPercentageToDP('2%'),
+        }}>
+
+            <Text style={styles.arab}>١١١</Text>
+
+            <Text style={styles.arab}>
+            رَبَّنَا اٰتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْاٰخِرَةِ
+            </Text>
+            <Text style={styles.latin}>
+            'ROBBANAA AATINAA FID-DUNYAA HASANAH WA FIL AAKHIROTI
+            </Text>
+
+            <Text style={styles.arab}>
+            حَسَنَةً وَقِنَا عَذَابَ النَّارِ،
+            </Text>
+            <Text style={styles.latin}>
+            'HASANAH WA QINAA 'ADZAABANNAR,
+            </Text>
+
+            <Text style={styles.arab}>
+            وَسَلَامٌ عَلَى الْمُرْسَليْنَ
+            </Text>
+            <Text style={styles.latin}>
+            'WA SALAAMUN 'ALAL MURSALIIN
+            </Text>
+
+            <Text style={styles.arab}>
+            وَالْحَمْدُ لِلّٰهِ رَبِّ
+            </Text>
+            <Text style={styles.latin}>
+            'WALHAMDULILLAHI ROBBIL
+            </Text>
+
+            <Text style={styles.arab}>
+            الْعَالَمِيْنَ
+            </Text>
+            <Text style={styles.latin}>
+            'AALAMIIN
+            </Text>
+            <Text style={styles.arab}>
+            ۞۞۞
+            </Text>
+            <Text style={styles.arab}>
+            ۞
+            </Text>
+        </View>
     </View>
   );
 };
