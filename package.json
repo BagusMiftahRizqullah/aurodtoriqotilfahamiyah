@@ -7,7 +7,12 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "bundle-android": "(react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/)",
+    "release-android": "(cd android && ./gradlew assembleRelease && cd .. && say -v good 'Android rilis') || (cd .. && say -v Bad 'Android Release Failed')",
+    "releaseb-android": "cd android && ./gradlew bundleRelease && cd .. && say -v good 'Android rilis'",
+    "build-android": "cd android && ./gradlew assembleDebug",
+    "bundle-ios": "(react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios && say -v trinoids 'IOS Bundle Done') || say -v Bad 'Bundle IOS Bad'"
   },
   "dependencies": {
     "@openspacelabs/react-native-zoomable-view": "^2.1.6",
@@ -15,7 +20,9 @@
     "@react-navigation/stack": "^6.4.1",
     "react": "18.3.1",
     "react-native": "0.75.2",
+    "react-native-blob-util": "^0.19.11",
     "react-native-gesture-handler": "^2.19.0",
+    "react-native-pdf": "^6.7.5",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "^4.10.9",
     "react-native-screens": "^3.34.0"

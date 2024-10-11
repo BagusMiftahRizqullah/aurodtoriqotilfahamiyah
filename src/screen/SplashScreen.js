@@ -8,7 +8,10 @@ const SplashScreen = (props) => {
   useEffect(() => {
     StatusBar.setHidden(true);
     setTimeout(() => {
-      props.navigation.navigate('Home');
+      props. navigation.reset({
+        index: 0,
+        routes: [{ name: 'Home' }], // Replace 'Home' with the name of your initial screen
+      });
   }, 900);
   }, []);
 
