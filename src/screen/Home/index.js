@@ -4,7 +4,7 @@ import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsi
 import Pdf from 'react-native-pdf';
 
 
-const Home = () => {
+const Home = (props) => {
   const scrollViewRef = useRef(null);
   const [page, setPage] = useState(1);
   const [num, setNum] = useState(0);
@@ -176,6 +176,79 @@ const Home = () => {
             <View style={{height:23}}/>
             <TouchableOpacity
               onPress={() => {
+                setModalVisible(!modalVisible);
+                props.navigation.navigate('Sound');
+              }}
+              style={{
+                borderWidth: 2,
+                borderRadius: 20,
+                width: widthPercentageToDP(39),
+                height: heightPercentageToDP(5),
+                backgroundColor: '#9CCCBE',
+                marginBottom: 12,
+                flexDirection:'row',
+                alignItems:'center',
+                justifyContent:'space-evenly',
+              }}>
+
+              <Image
+              source={require('../../Assets/images/sound.png')}
+              style={{
+                width: widthPercentageToDP('7%'),
+                height: heightPercentageToDP('4%'),
+              }}
+              resizeMode="cover"
+            />
+            <View style={{width:0}}/>
+            <Text style={styles.modalText}>Sound</Text>
+            </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  width: widthPercentageToDP(39),
+                  height: heightPercentageToDP(5),
+                  backgroundColor: '#FFC8D5',
+                  marginBottom: 12,
+                  flexDirection:'row',
+                  alignItems:'center',
+                  justifyContent:'space-evenly',
+                }}
+                onPress={() => {
+                  setModalVisible(false),
+                    Linking.openURL(
+                      'vnd.youtube://channel/UC3UJLpCAbZ6L6bJuhj5SAnQ',
+                    )
+                      .then(supported => {
+                        if (supported) {
+                          return Linking.openURL(
+                            'vnd.youtube://channel/UC3UJLpCAbZ6L6bJuhj5SAnQ',
+                          );
+                        } else {
+                          return Linking.openURL(
+                            'https://www.youtube.com/channel/UC3UJLpCAbZ6L6bJuhj5SAnQ',
+                          );
+                        }
+                      })
+                      .catch(err => {
+                        console.log('errr', err),
+                          Linking.openURL(
+                            'https://www.youtube.com/channel/UC3UJLpCAbZ6L6bJuhj5SAnQ',
+                          );
+                      });
+                }}>
+                   <Image
+                source={require('../../Assets/images/youtube.png')}
+                style={{
+                  width: widthPercentageToDP('7%'),
+                  height: heightPercentageToDP('4%'),
+                }}
+                resizeMode="cover"
+              />
+                <Text style={styles.modalText}>Youtube</Text>
+              </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
                 setModalVisible(false);
                 Linking.openURL(
                   'whatsapp://send?text=Assalamualaikum syeikh&phone=+6281237664599'
@@ -218,51 +291,6 @@ const Home = () => {
             />
 
             <Text style={styles.modalText}>WhatsApp</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                borderWidth: 2,
-                borderRadius: 20,
-                width: widthPercentageToDP(39),
-                height: heightPercentageToDP(5),
-                backgroundColor: '#FFC8D5',
-                marginBottom: 12,
-                flexDirection:'row',
-                alignItems:'center',
-                justifyContent:'space-evenly',
-              }}
-              onPress={() => {
-                setModalVisible(false),
-                  Linking.openURL(
-                    'vnd.youtube://channel/UC3UJLpCAbZ6L6bJuhj5SAnQ',
-                  )
-                    .then(supported => {
-                      if (supported) {
-                        return Linking.openURL(
-                          'vnd.youtube://channel/UC3UJLpCAbZ6L6bJuhj5SAnQ',
-                        );
-                      } else {
-                        return Linking.openURL(
-                          'https://www.youtube.com/channel/UC3UJLpCAbZ6L6bJuhj5SAnQ',
-                        );
-                      }
-                    })
-                    .catch(err => {
-                      console.log('errr', err),
-                        Linking.openURL(
-                          'https://www.youtube.com/channel/UC3UJLpCAbZ6L6bJuhj5SAnQ',
-                        );
-                    });
-              }}>
-                 <Image
-              source={require('../../Assets/images/youtube.png')}
-              style={{
-                width: widthPercentageToDP('7%'),
-                height: heightPercentageToDP('4%'),
-              }}
-              resizeMode="cover"
-            />
-              <Text style={styles.modalText}>Youtube</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
