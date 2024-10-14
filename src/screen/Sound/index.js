@@ -13,7 +13,7 @@ import {
 } from 'react-native-responsive-screen';
 import TrackPlayer from 'react-native-track-player';
 
-const Sound = () => {
+const Sound = (props) => {
     const [pause, setPause] = useState(false);
     const [onPlay, setOnPlay] = useState('');
     const [trackNow, setTracknOW] = useState(false);
@@ -124,6 +124,33 @@ const Sound = () => {
 
         justifyContent: 'space-between',
       }}>
+          <View style={{ justifyContent:'flex-start', alignItems: 'center', backgroundColor:'#008080', padding: heightPercentageToDP('2.2%'), flexDirection: 'row', borderBottomRightRadius: 18, borderBottomLeftRadius: 18 }}>
+          <TouchableOpacity
+              onPress={() => {
+                props.navigation.goBack();
+              }}>
+
+              <Image
+              tintColor={'#ffffff'}
+              source={require('../../Assets/images/back.png')}
+              style={{
+                width: widthPercentageToDP('9.5%'),
+                height: heightPercentageToDP('4.5%'),
+              }}
+              resizeMode="cover"
+            />
+            <View style={{width:0}}/>
+
+            </TouchableOpacity>
+            <View style={{width:widthPercentageToDP('30%')}}/>
+          <Text  style={{
+              color: '#ffffff',
+              alignSelf: 'center',
+              fontWeight: 'bold',
+              fontSize: heightPercentageToDP(2.5),
+            }}>Sound</Text>
+
+         </View>
       <View
         style={{
         flex: 1,
