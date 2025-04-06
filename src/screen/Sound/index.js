@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,260 +7,150 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import {
-  heightPercentageToDP,
-  widthPercentageToDP,
-} from 'react-native-responsive-screen';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import TrackPlayer from 'react-native-track-player';
 
-const Sound = (props) => {
-    const [pause, setPause] = useState(false);
-    const [onPlay, setOnPlay] = useState('');
-    const [trackNow, setTracknOW] = useState(false);
+const tracks = [
+  {
+    url: require('../../Assets/RotibulMuhammad.mp3'),
+    title: 'Ratibul Muhammad.mp3',
+    artist: 'Thoriqoh Fahamiyah',
+    artwork: require('../../Assets/images/ratibulMuhammad.png'),
+  },
+  {
+    url: require('../../Assets/MaulidulMuhammad.mp3'),
+    title: 'Maulidul Muhammad.mp3',
+    artist: 'Thoriqoh Fahamiyah',
+    artwork: require('../../Assets/images/maulidulMuhammad.png'),
+  },
+  {
+    url: require('../../Assets/manaqib.mp3'),
+    title: 'Manaqib.mp3',
+    artist: 'Thoriqoh Fahamiyah',
+    artwork: require('../../Assets/images/manaqib.png'),
+  },
+  {
+    url: require('../../Assets/DoaFathimah.mp3'),
+    title: 'Doa Fathimah.mp3',
+    artist: 'Thoriqoh Fahamiyah',
+    artwork: require('../../Assets/images/DoaFathimah.png'),
+  },
+  {
+    url: require('../../Assets/ShalawatMukafaah.mp3'),
+    title: 'Shalawat Mukafaah.mp3',
+    artist: 'Thoriqoh Fahamiyah',
+    artwork: require('../../Assets/images/ShalawatMukafah.png'),
+  },
+];
 
+const Sound = ({ navigation }) => {
+  const [pause, setPause] = useState(false);
+  const [onPlay, setOnPlay] = useState('');
+  const [trackNow, setTrackNow] = useState(0);
 
-    const AllTrack = [
-        {
-          url: require('../../Assets/RotibulMuhammad.mp3'),
-          title: 'Ratibul Muhammad.mp3',
-          artist: 'Thoriqoh Fahamiyah',
-          artwork: require('../../Assets/images/ratibulMuhammad.png'),
+  useEffect(() => {
+    async function setupPlayer() {
+      await TrackPlayer.setupPlayer();
+      await TrackPlayer.add(tracks);
+
+      const [position, duration] = await Promise.all([
+        TrackPlayer.getPosition(),
+        TrackPlayer.getDuration(),
+      ]);
+      setTrackNow(duration - position);
+
+      await TrackPlayer.updateOptions({
+        android: {
+          appKilledPlaybackBehavior: TrackPlayer.APP_KILLED_PLAYBACK_BEHAVIOR_CONTINUE_PLAYBACK,
         },
-        {
-          url: require('../../Assets/MaulidulMuhammad.mp3'),
-          title: 'Maulidul Muhammad.mp3',
-          artist: 'Thoriqoh Fahamiyah',
-          artwork: require('../../Assets/images/maulidulMuhammad.png'),
-        },
-        {
-          url: require('../../Assets/manaqib.mp3'),
-          title: 'Manaqib.mp3',
-          artist: 'Thoriqoh Fahamiyah',
-          artwork: require('../../Assets/images/manaqib.png'),
-        },
-        {
-          url: require('../../Assets/DoaFathimah.mp3'),
-          title: 'Doa Fathimah.mp3',
-          artist: 'Thoriqoh Fahamiyah',
-          artwork: require('../../Assets/images/DoaFathimah.png'),
-        },
-        {
-          url: require('../../Assets/ShalawatMukafaah.mp3'),
-          title: 'Shalawat Mukafaah.mp3',
-          artist: 'Thoriqoh Fahamiyah',
-          artwork: require('../../Assets/images/ShalawatMukafah.png'),
-        },
-      ];
+        stopWithApp: false,
+        capabilities: [
+          TrackPlayer.CAPABILITY_PLAY,
+          TrackPlayer.CAPABILITY_PAUSE,
+          TrackPlayer.CAPABILITY_SKIP_TO_NEXT,
+          TrackPlayer.CAPABILITY_SKIP_TO_PREVIOUS,
+          TrackPlayer.CAPABILITY_STOP,
+        ],
+        compactCapabilities: [
+          TrackPlayer.CAPABILITY_PLAY,
+          TrackPlayer.CAPABILITY_PAUSE,
+        ],
+      });
+    }
 
+    setupPlayer();
+  }, []);
 
-      useEffect(() => {
-        async function setupMusic() {
-          await TrackPlayer.setupPlayer();
-          await TrackPlayer.add(AllTrack);
-          const position = await TrackPlayer.getPosition();
-          const duration = await TrackPlayer.getDuration();
-          console.log(`${duration - position} seconds left.`);
-          setTracknOW(duration - position);
-          TrackPlayer.updateOptions({
-            android: {
-                // This is the default behavior
-                appKilledPlaybackBehavior: true,
-            },
-        });
-        }
+  const start = async (forcePlay = false) => {
+    const trackIndex = await TrackPlayer.getCurrentTrack();
+    const track = await TrackPlayer.getTrack(trackIndex);
+    setOnPlay(track.title);
 
-        setupMusic();
-      }, []);
+    if (forcePlay || !pause) {
+      await TrackPlayer.play();
+    } else {
+      await TrackPlayer.pause();
+    }
+  };
 
-      // Play the sound with an onEnd callback
-      const start = async index => {
-        console.log('pause', pause);
-        let trackIndex = await TrackPlayer.getCurrentTrack();
-        let trackObject = await TrackPlayer.getTrack(trackIndex);
-        console.log('trackObject', trackObject);
-        setOnPlay(trackObject.title);
+  const handleSkip = async (direction) => {
+    if (direction === 'prev') {
+      await TrackPlayer.skipToPrevious();
+    } else {
+      await TrackPlayer.skipToNext();
+    }
 
-        // Start playing it
-        if (index == true) {
-          await TrackPlayer.play();
-        } else if (pause == true) {
-          await TrackPlayer.stop();
-        } else {
-          await TrackPlayer.play();
-        }
-      };
+    const trackIndex = await TrackPlayer.getCurrentTrack();
+    const track = await TrackPlayer.getTrack(trackIndex);
+    setOnPlay(track.title);
+  };
 
-      const prevFUN = async () => {
-        let trackIndex1 = await TrackPlayer.getCurrentTrack();
-        let trackObject1 = await TrackPlayer.getTrack(
-          trackIndex1 == null ? 0 : trackIndex1 - 1,
-        );
-        setOnPlay(trackObject1.title);
-        await TrackPlayer.skipToPrevious();
-      };
-
-      const nexFUN = async () => {
-        let trackIndex2 = await TrackPlayer.getCurrentTrack();
-        let trackObject2 = await TrackPlayer.getTrack(trackIndex2 + 1);
-        console.log('next', trackIndex2);
-
-        setOnPlay(trackObject2.title);
-        await TrackPlayer.skipToNext();
-      };
-
-      const palyIndex = async i => {
-        await TrackPlayer.skip(i);
-
-        let trackIndex3 = await TrackPlayer.getCurrentTrack();
-        let trackObject3 = await TrackPlayer.getTrack(trackIndex3);
-        setOnPlay(trackObject3.title);
-        await start(true);
-      };
+  const playFromIndex = async (index) => {
+    await TrackPlayer.skip(index);
+    const track = await TrackPlayer.getTrack(index);
+    setOnPlay(track.title);
+    await start(true);
+  };
 
   return (
-    <View
-      style={{
-        flex: 1,
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Image
+            tintColor="#ffffff"
+            source={require('../../Assets/images/back.png')}
+            style={styles.backIcon}
+            resizeMode="cover"
+          />
+        </TouchableOpacity>
+        <Text style={styles.title}>Sound</Text>
+      </View>
 
-        justifyContent: 'space-between',
-      }}>
-          <View style={{ justifyContent:'flex-start', alignItems: 'center', backgroundColor:'#008080', padding: heightPercentageToDP('2.2%'), flexDirection: 'row', borderBottomRightRadius: 18, borderBottomLeftRadius: 18 }}>
-          <TouchableOpacity
-              onPress={() => {
-                props.navigation.goBack();
-              }}>
-
-              <Image
-              tintColor={'#ffffff'}
-              source={require('../../Assets/images/back.png')}
-              style={{
-                width: widthPercentageToDP('9.5%'),
-                height: heightPercentageToDP('4.5%'),
-              }}
-              resizeMode="cover"
-            />
-            <View style={{width:0}}/>
-
+      <View style={styles.body}>
+        <ScrollView contentContainerStyle={styles.trackList}>
+          {tracks.map((track, i) => (
+            <TouchableOpacity key={i} onPress={() => { setPause(true); playFromIndex(i); }} style={styles.trackItem}>
+              <Image source={track.artwork} style={styles.artwork} resizeMode="contain" />
+              <Text style={styles.trackTitle}>{track.title}</Text>
             </TouchableOpacity>
-            <View style={{width:widthPercentageToDP('30%')}}/>
-          <Text  style={{
-              color: '#ffffff',
-              alignSelf: 'center',
-              fontWeight: 'bold',
-              fontSize: heightPercentageToDP(2.5),
-            }}>Sound</Text>
-
-         </View>
-      <View
-        style={{
-        flex: 1,
-          height: heightPercentageToDP(90),
-          padding: 8,
-        }}>
-        <ScrollView
-          style={{
-            flex: 1,
-            marginHorizontal: heightPercentageToDP(2),
-          }}>
-          {AllTrack?.map((v, i) => {
-            return (
-              <View style={{
-                flex: 1,
-              }} key={i}>
-                <TouchableOpacity
-                  onPress={() => {
-                    setPause(true), palyIndex(i);
-                  }}
-                  style={{
-                    // backgroundColor:'red',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                  }}>
-                  <Image
-                    style={{
-                      width: widthPercentageToDP(32),
-                      height: heightPercentageToDP(23),
-                      marginRight: widthPercentageToDP(0),
-                    }}
-                    source={v?.artwork}
-                    resizeMode="contain"
-                  />
-                  <Text
-                    style={{
-                      color: '#000000',
-                    }}>
-                    {v?.title}
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            );
-          })}
+          ))}
         </ScrollView>
-        {/* playing button */}
-        <View
-          style={{
 
-            backgroundColor: 'white',
-            height: heightPercentageToDP(16),
-            justifyContent: 'center',
-            marginTop: heightPercentageToDP(2),
-            marginBottom: heightPercentageToDP(1),
-          }}>
-          <Text
-            style={{
-              color: '#000000',
-              alignSelf: 'center',
-              marginBottom: 13,
-            }}>
-            {onPlay !== '' ? onPlay : AllTrack[trackNow]?.title}
-          </Text>
-          <View
-            opacity={0.7}
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              alignItems: 'center',
-            }}>
-            <TouchableOpacity onPress={() => prevFUN()}>
+        <View style={styles.player}>
+          <Text style={styles.nowPlaying}>{onPlay || tracks[trackNow]?.title}</Text>
+          <View style={styles.controls}>
+            <TouchableOpacity onPress={() => handleSkip('prev')}>
+              <Image source={require('../../Assets/images/prevMusic.png')} style={styles.controlIcon} resizeMode="contain" />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => { setPause(!pause); start(); }}>
               <Image
-                style={{
-                  width: widthPercentageToDP(8),
-                  height: heightPercentageToDP(5),
-                  marginRight: widthPercentageToDP(0),
-                }}
-                source={require('../../Assets/images/prevMusic.png')}
+                source={pause ? require('../../Assets/images/pauseMusic.png') : require('../../Assets/images/playMusic.png')}
+                style={styles.playIcon}
                 resizeMode="contain"
               />
             </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => {
-                setPause(!pause), start();
-              }}>
-              <Image
-                style={{
-                  width: widthPercentageToDP(10),
-                  height: heightPercentageToDP(8),
-                  marginRight: widthPercentageToDP(0),
-                }}
-                source={
-                  pause
-                    ? require('../../Assets/images/pauseMusic.png')
-                    : require('../../Assets/images/playMusic.png')
-                }
-               resizeMode="contain"
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => nexFUN()}>
-              <Image
-                style={{
-                  width: widthPercentageToDP(8),
-                  height: heightPercentageToDP(5),
-                  marginRight: widthPercentageToDP(0),
-                }}
-                source={require('../../Assets/images/nextMusic.png')}
-               resizeMode="contain"
-              />
+            <TouchableOpacity onPress={() => handleSkip('next')}>
+              <Image source={require('../../Assets/images/nextMusic.png')} style={styles.controlIcon} resizeMode="contain" />
             </TouchableOpacity>
           </View>
         </View>
@@ -271,4 +161,74 @@ const Sound = (props) => {
 
 export default Sound;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#008080',
+    padding: hp('2.2%'),
+    borderBottomLeftRadius: 18,
+    borderBottomRightRadius: 18,
+  },
+  backIcon: {
+    width: wp('9.5%'),
+    height: hp('4.5%'),
+  },
+  title: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: hp(2.5),
+    marginLeft: wp('30%'),
+  },
+  body: {
+    flex: 1,
+    height: hp(90),
+    padding: 8,
+  },
+  trackList: {
+    marginHorizontal: hp(2),
+  },
+  trackItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: hp(2),
+  },
+  artwork: {
+    width: wp(32),
+    height: hp(23),
+  },
+  trackTitle: {
+    color: '#000',
+    marginLeft: wp(2),
+    flexShrink: 1,
+  },
+  player: {
+    backgroundColor: '#fff',
+    height: hp(16),
+    justifyContent: 'center',
+    marginVertical: hp(1),
+  },
+  nowPlaying: {
+    color: '#000',
+    alignSelf: 'center',
+    marginBottom: 13,
+  },
+  controls: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    opacity: 0.7,
+  },
+  controlIcon: {
+    width: wp(8),
+    height: hp(5),
+  },
+  playIcon: {
+    width: wp(10),
+    height: hp(8),
+  },
+});
