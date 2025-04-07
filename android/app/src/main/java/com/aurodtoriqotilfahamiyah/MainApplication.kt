@@ -1,4 +1,4 @@
-package com.aurodtoriqotilfahamiyah
+package com.aurodtoriqotilfahamiyah2024
 
 import android.app.Application
 import com.facebook.react.PackageList

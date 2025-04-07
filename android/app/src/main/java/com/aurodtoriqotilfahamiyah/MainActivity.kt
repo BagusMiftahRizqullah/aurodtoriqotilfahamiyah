@@ -1,4 +1,4 @@
-package com.aurodtoriqotilfahamiyah
+package com.aurodtoriqotilfahamiyah2024
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
