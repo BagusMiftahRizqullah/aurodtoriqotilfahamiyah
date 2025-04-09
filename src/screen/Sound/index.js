@@ -46,70 +46,99 @@ const tracks = [
 const Sound = ({ navigation }) => {
   const [pause, setPause] = useState(false);
   const [onPlay, setOnPlay] = useState('');
-  const [trackNow, setTrackNow] = useState(0);
+  const [isPlayerReady, setIsPlayerReady] = useState(false);
 
   useEffect(() => {
-    async function setupPlayer() {
-      await TrackPlayer.setupPlayer();
-      await TrackPlayer.add(tracks);
+    const setup = async () => {
+      try {
+        console.log('setup1');
+        await TrackPlayer.setupPlayer();
+        console.log('setup2');
+        await TrackPlayer.reset();
+        console.log('setup3');
+        await TrackPlayer.add(tracks);
+        console.log('setup4');
 
-      const [position, duration] = await Promise.all([
-        TrackPlayer.getPosition(),
-        TrackPlayer.getDuration(),
-      ]);
-      setTrackNow(duration - position);
+        // await TrackPlayer.updateOptions({
+        //   android: {
+        //     appKilledPlaybackBehavior: TrackPlayer.APP_KILLED_PLAYBACK_BEHAVIOR_CONTINUE_PLAYBACK,
+        //   },
+        //   stopWithApp: false,
+        //   capabilities: [
+        //     TrackPlayer.CAPABILITY_PLAY,
+        //     TrackPlayer.CAPABILITY_PAUSE,
+        //     TrackPlayer.CAPABILITY_SKIP_TO_NEXT,
+        //     TrackPlayer.CAPABILITY_SKIP_TO_PREVIOUS,
+        //     TrackPlayer.CAPABILITY_STOP,
+        //   ],
+        //   compactCapabilities: [
+        //     TrackPlayer.CAPABILITY_PLAY,
+        //     TrackPlayer.CAPABILITY_PAUSE,
+        //   ],
+        // });
+        console.log('setup5');
 
-      await TrackPlayer.updateOptions({
-        android: {
-          appKilledPlaybackBehavior: TrackPlayer.APP_KILLED_PLAYBACK_BEHAVIOR_CONTINUE_PLAYBACK,
-        },
-        stopWithApp: false,
-        capabilities: [
-          TrackPlayer.CAPABILITY_PLAY,
-          TrackPlayer.CAPABILITY_PAUSE,
-          TrackPlayer.CAPABILITY_SKIP_TO_NEXT,
-          TrackPlayer.CAPABILITY_SKIP_TO_PREVIOUS,
-          TrackPlayer.CAPABILITY_STOP,
-        ],
-        compactCapabilities: [
-          TrackPlayer.CAPABILITY_PLAY,
-          TrackPlayer.CAPABILITY_PAUSE,
-        ],
-      });
-    }
+        setIsPlayerReady(true);
+      } catch (err) {
+        console.error('useEffect setup error:', err);
+      }
+    };
 
-    setupPlayer();
+    setup();
   }, []);
 
-  const start = async (forcePlay = false) => {
-    const trackIndex = await TrackPlayer.getCurrentTrack();
-    const track = await TrackPlayer.getTrack(trackIndex);
-    setOnPlay(track.title);
 
-    if (forcePlay || !pause) {
-      await TrackPlayer.play();
-    } else {
-      await TrackPlayer.pause();
+  const start = async (forcePlay = false) => {
+    if (!isPlayerReady) {return;}
+
+    try {
+      const trackIndex = await TrackPlayer.getCurrentTrack();
+      if (trackIndex === null) {return;}
+
+      const track = await TrackPlayer.getTrack(trackIndex);
+      if (track?.title) {setOnPlay(track.title);}
+
+      if (forcePlay || !pause) {
+        await TrackPlayer.play();
+      } else {
+        await TrackPlayer.pause();
+      }
+    } catch (err) {
+      console.warn('Start Error:', err);
     }
   };
 
   const handleSkip = async (direction) => {
-    if (direction === 'prev') {
-      await TrackPlayer.skipToPrevious();
-    } else {
-      await TrackPlayer.skipToNext();
-    }
+    if (!isPlayerReady) {return;}
 
-    const trackIndex = await TrackPlayer.getCurrentTrack();
-    const track = await TrackPlayer.getTrack(trackIndex);
-    setOnPlay(track.title);
+    try {
+      if (direction === 'prev') {
+        await TrackPlayer.skipToPrevious();
+      } else {
+        await TrackPlayer.skipToNext();
+      }
+
+      const trackIndex = await TrackPlayer.getCurrentTrack();
+      if (trackIndex !== null) {
+        const track = await TrackPlayer.getTrack(trackIndex);
+        if (track?.title) {setOnPlay(track.title);}
+      }
+    } catch (err) {
+      console.warn('Skip Error:', err);
+    }
   };
 
   const playFromIndex = async (index) => {
-    await TrackPlayer.skip(index);
-    const track = await TrackPlayer.getTrack(index);
-    setOnPlay(track.title);
-    await start(true);
+    if (!isPlayerReady) {return;}
+
+    try {
+      await TrackPlayer.skip(index);
+      const track = await TrackPlayer.getTrack(index);
+      if (track?.title) {setOnPlay(track.title);}
+      await start(true);
+    } catch (err) {
+      console.warn('PlayFromIndex Error:', err);
+    }
   };
 
   return (
@@ -137,7 +166,7 @@ const Sound = ({ navigation }) => {
         </ScrollView>
 
         <View style={styles.player}>
-          <Text style={styles.nowPlaying}>{onPlay || tracks[trackNow]?.title}</Text>
+          <Text style={styles.nowPlaying}>{onPlay || 'Select a track'}</Text>
           <View style={styles.controls}>
             <TouchableOpacity onPress={() => handleSkip('prev')}>
               <Image source={require('../../Assets/images/prevMusic.png')} style={styles.controlIcon} resizeMode="contain" />
@@ -160,6 +189,9 @@ const Sound = ({ navigation }) => {
 };
 
 export default Sound;
+
+// ...styles (unchanged)
+
 
 const styles = StyleSheet.create({
   container: {
